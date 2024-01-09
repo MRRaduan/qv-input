@@ -1,6 +1,6 @@
 {
   "name": "@MRRaduan/qv-input",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Input component library for QV",
   "scripts": {
     "rollup": "rollup -c",

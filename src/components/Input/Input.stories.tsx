@@ -13,13 +13,27 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    requirements: [
+      {
+        description: "Has a number 0-9",
+        validator: (password: string) => /[0-9]/.test(password),
+      },
+      {
+        description: "Has a special char !@#$%ˆ&*",
+        validator: (password: string) => /[!@#$%ˆ&*/]/.test(password),
+      },
+      {
+        description: "Has uppercase Letter",
+        validator: (password: string) => /[A-Z]/.test(password),
+      },
+    ],
+  },
+};

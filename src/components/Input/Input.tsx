@@ -22,7 +22,11 @@ const Input = (props: TInputProps) => {
 
   return (
     <div className="password-component">
-      <input type="password" onChange={(e) => handleOnChange(e)} />
+      <input
+        type="password"
+        onChange={(e) => handleOnChange(e)}
+        aria-label="password-input"
+      />
       <ul className="validations">
         {requirements.map((req) => {
           const { description, validator } = req;
